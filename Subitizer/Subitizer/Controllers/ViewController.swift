@@ -51,8 +51,11 @@ class ViewController: UIViewController {
 
 
 extension ViewController: UIImagePickerControllerDelegate {
-  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-    guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else { return }
+  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+// Local variable inserted by Swift 4.2 migrator.
+let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+
+    guard let image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as? UIImage else { return }
     DispatchQueue.main.async {
       self.process(image: image)
       self.dismiss(animated: true)
@@ -101,9 +104,19 @@ extension ViewController {
   }
   
   func updateChildVCsWithSubitizerResult(_ result: [Double]) {
-    guard let resultVC = childViewControllers.filter({ $0 is SubitizerResultViewController }).first as? SubitizerResultViewController else { return }
+    guard let resultVC = children.filter({ $0 is SubitizerResultViewController }).first as? SubitizerResultViewController else { return }
     DispatchQueue.main.async {
       resultVC.subitizerResults = result
     }
   }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
+	return input.rawValue
 }
