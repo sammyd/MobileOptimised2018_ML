@@ -91,8 +91,6 @@ footer: @iwantmyrealname
 
 ---
 
-# [fit] Machine Learning
-
 1. Collect data
 2. Ground truth
 3. Feature vectors
@@ -104,10 +102,19 @@ footer: @iwantmyrealname
 
 ---
 
-# [fit] Machine Learning
+1. Collect data
+2. Ground truth
+3. Feature vectors
+4. Train model
+5. Test model
+6. Repeat 3, 4 & 5
+7. _Deploy model_
+8. _Perform prediction_
 
-1. _Collect data_
-2. _Ground truth_
+---
+
+1. Collect data
+2. Ground truth
 3. _Feature vectors_
 4. _Train model_
 5. _Test model_
@@ -290,6 +297,25 @@ footer: @iwantmyrealname
 # [fit] salient
 # [fit] object
 # [fit] subitizing
+
+---
+
+# [fit] demo
+
+---
+
+# [fit] __Create ML__
+
+---
+
+# [fit] __macOS__
+# [fit] framework
+
+---
+
+# [fit] _limited_
+# [fit] __but__
+# [fit] _powerful_
 
 ---
 
