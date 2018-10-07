@@ -350,9 +350,13 @@ footer: @iwantmyrealname
 
 ---
 
+![](images/mlt.png)
+
+---
+
 # [fit] __github.com/sammyd__
 # [fit] /MobileOptimised2018_ML
-# [fit] _-_
+# [fit] _sam@razeware.com_
 # [fit] _@iwantmyrealname_
 
 
